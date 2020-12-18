@@ -2,11 +2,11 @@
 
 import logging
 import sys
-
-from configparser import ConfigParser
 from argparse import ArgumentParser
-from os.path import expanduser, isfile
+from configparser import ConfigParser
 from datetime import datetime
+from os.path import expanduser, isfile
+
 from urllib3 import disable_warnings
 from urllib3.exceptions import InsecureRequestWarning
 
@@ -112,12 +112,15 @@ if __name__ == '__main__':
     )
 
     if args.command == 'nmap':
+        logging.info(f'Nmap scan started')
         cmd_nmap(scanner)
     elif args.command == 'netxms':
+        logging.info(f'netxms scan started')
         scanner.tag = 'netxms'
         scanner.cleanup = netxms.getboolean('cleanup')
         cmd_netxms(scanner)
     elif args.command == 'prime':
+        logging.info(f'prime scan started')
         scanner.tag = prime['tag']
         scanner.cleanup = prime.getboolean('cleanup')
         cmd_prime(scanner)
