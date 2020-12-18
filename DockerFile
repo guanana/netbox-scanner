@@ -1,5 +1,5 @@
 FROM python:3-alpine
-MAINTAINER guanana
+MAINTAINER guanana2
 RUN apk add --no-cache nmap
 WORKDIR /usr/src/netbox-scanner
 COPY . .
