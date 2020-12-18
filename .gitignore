@@ -111,4 +111,5 @@ logs/*
 
 test_api.py
 
-samples/custom-nmap-scan.sh
+networks.txt
+netbox-scanner.conf
