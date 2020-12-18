@@ -16,7 +16,9 @@ $ source venv/bin/activate
 $ pip install -r requirements.txt
 ```
 
-After installation, use the `netbox-scanner.conf` file as an example to create your own and put this file in `/opt/netbox` or prepend its name with a dot and put it in your home directory --`~/.netbox-scanner.conf`.  Keep reading to learn more about configuration.
+After installation, use the `netbox-scanner.conf` file as an example to create your own and put this file 
+in `/opt/netbox` or prepend its name with a dot and put it in your home directory --`~/.netbox-scanner.conf`.  
+Keep reading to learn more about configuration.
 
 > Starting with Netbox **v2.9.0** there are changes to the way tags are created. You must go into the web UI and explicity create a tag for each module you are planning to use here. So for example, if you want to use the nmap module, you have to create a Netbox tag called 'nmap' before you can successfully use it.
 
@@ -42,7 +44,12 @@ Users can interact with netbox-scanner by command line and configuration file.  
 
 The configuration file (`netbox-scanner.conf`) is where netbox-scanner looks for details such as authentication data and path to files.  This file can be stored on the user's home directory, on `/opt/netbox` or under the project root directory, but if you choose the first option, it must be a hidden file --`.netbox-scanner.conf`.
 
-> Remember that netbox-scanner will always look for this file at home directory, then at `/opt/netbox`, and finally in the project root dir, in this order.  The first occurrence will be considered.
+You can define as well ENV variables with the values represented in netbox-scanner.conf (do not delete the key from the file though) 
+If you want to override a variable under section \[NMAP\] with key: networks you need to export an environment variables as follows:
+
+NMAP_NETWORKS=192.168.1.0/24,192.168.2.0/24 
+
+> Remember that ENV take preference then netbox-scanner will always look for this file at home directory, then at `/opt/netbox`, and finally in the project root dir, in this order.  The first occurrence will be considered.
 
 
 ## Modules
