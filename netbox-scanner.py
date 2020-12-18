@@ -86,11 +86,9 @@ logging.getLogger().addHandler(logging.StreamHandler())
 # useful if you have tls_verify set to no
 disable_warnings(InsecureRequestWarning)
 
-with open(nmap['networks'], 'r') as file:
-    networks = file.readlines()
 
 def cmd_nmap(s):  # nmap handler
-    h = Nmap(nmap['unknown'], networks)
+    h = Nmap(nmap['unknown'], nmap['networks'].split(","))
     h.run()
     s.sync(h.hosts)
 
