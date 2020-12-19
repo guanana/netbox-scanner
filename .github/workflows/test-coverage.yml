@@ -19,7 +19,10 @@ jobs:
     runs-on: ubuntu-latest
 
   steps:
-    - name: "Upload coverage to Codecov"
-      uses: codecov/codecov-action@v1
+    - uses: actions/checkout@master
+    - uses: codecov/codecov-action@v1
       with:
+        flags: unittests
+        name: codecov-umbrella
         fail_ci_if_error: true
+        verbose: true
