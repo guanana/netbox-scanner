@@ -7,7 +7,7 @@ A scanner util for [NetBox](https://netbox.readthedocs.io/en/stable/), because c
 
 
 ## Installation
-netbox-scanner is compatible with **Python 3.7+**, and can be installed like this:
+netbox-scanner is compatible with **Python 3.9+**, and can be installed like this:
 
 ```bash
 $ wget https://github.com/lopes/netbox-scanner/archive/master.zip
