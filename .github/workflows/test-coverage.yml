@@ -1,4 +1,4 @@
-name: Test Coverage
+name: TestCov
 
 on:
   push:
@@ -19,7 +19,6 @@ jobs:
     runs-on: ubuntu-latest
 
   steps:
-    # (Other steps go here)
     - name: "Upload coverage to Codecov"
       uses: codecov/codecov-action@v1
       with:
