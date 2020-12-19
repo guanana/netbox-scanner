@@ -1,25 +1,26 @@
 name: TestCov
+on: [push]
 
-on:
-  push:
-    # Publish `master` as Docker `latest` image.
-    branches:
-      - master
-
-    # Publish `v1.2.3` tags as releases.
-    tags:
-      - v*
-
-  # Run tests for any PRs.
-  pull_request:
+env:
+  IMAGE_NAME: netbox-scanner
+  NETBOX_ADDRESS: http://test:8000
+  NETBOX_TOKEN: 12345
 jobs:
   runs-on: ubuntu-latest
-
   steps:
-    - uses: actions/checkout@master
-    - uses: codecov/codecov-action@v1
-      with:
-        flags: unittests
-        name: codecov-umbrella
-        fail_ci_if_error: true
-        verbose: true
+  - uses: actions/checkout@master
+  - name: Setup Python
+    uses: actions/setup-python@master
+    with:
+      python-version: 3.9
+    - name: Generate coverage report
+      run: |
+        pip install pytest
+        pip install pytest-cov
+        pytest --cov=./ --cov-report=xml
+  - uses: codecov/codecov-action@v1
+    with:
+      flags: unittests
+      name: codecov-umbrella
+      fail_ci_if_error: true
+      verbose: true
