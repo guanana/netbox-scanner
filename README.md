@@ -1,5 +1,5 @@
 [![Known Vulnerabilities](https://snyk.io/test/github/guanana/netbox-scanner/badge.svg)](https://snyk.io/test/github/guanana/netbox-scanner)
-
+[![codecov](https://codecov.io/gh/guanana/netbox-scanner/branch/master/graph/badge.svg?token=AXZE3O9DUL)](https://codecov.io/gh/guanana/netbox-scanner)
 # netbox-scanner
 A scanner util for [NetBox](https://netbox.readthedocs.io/en/stable/), because certain networks can be updated *automagically*.  netbox-scanner aims to create, update, and delete hosts (`/32`) in NetBox, either discovered by network scans and synchronized from other sources.
 
@@ -7,7 +7,7 @@ A scanner util for [NetBox](https://netbox.readthedocs.io/en/stable/), because c
 
 
 ## Installation
-netbox-scanner is compatible with **Python 3.7+**, and can be installed like this:
+netbox-scanner is compatible with **Python 3.9+**, and can be installed like this:
 
 ```bash
 $ wget https://github.com/lopes/netbox-scanner/archive/master.zip
