@@ -1,8 +1,8 @@
-certifi==2020.12.5
+certifi==2023.7.22
 chardet==3.0.4
 idna==2.10
 pynetbox==5.1.1
-requests==2.25.1
+requests==2.31.0
 six==1.15.0
-urllib3==1.26.2
+urllib3==1.26.18
 python3-nmap==1.4.9
