@@ -1,4 +1,4 @@
-FROM python:3-alpine
+FROM python:3.13.0a3-alpine
 MAINTAINER guanana2
 RUN apk add --no-cache nmap
 WORKDIR /usr/src/netbox-scanner
